@@ -11,7 +11,7 @@ class SearchViewController: UIViewController {
     
     let logoImageView = UIImageView()
     let usernameTextField = GithubTextField()
-    let callToActionButton = GithubFollowersButton(backgroundColor: .systemGreen, title: "Get Followers")
+    let callToActionButton = GithubButton(backgroundColor: .systemGreen, title: "Get Followers")
 
     override func viewDidLoad() {
         super.viewDidLoad()

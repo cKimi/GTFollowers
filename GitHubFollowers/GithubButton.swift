@@ -1,5 +1,5 @@
 //
-//  GithubFollowersButton.swift
+//  GithubButton.swift
 //  GitHubFollowers
 //
 //  Created by Carlos Kimura on 29/11/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GithubFollowersButton: UIButton {
+class GithubButton: UIButton {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
