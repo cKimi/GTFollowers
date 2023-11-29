@@ -13,6 +13,7 @@
 		0FA51DA32B169100009CC95A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FA51DA12B169100009CC95A /* LaunchScreen.storyboard */; };
 		0FCA98CA2B176BD80015F8CB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCA98C92B176BD80015F8CB /* SearchViewController.swift */; };
 		0FCA98CC2B176C030015F8CB /* FavoritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCA98CB2B176C030015F8CB /* FavoritesListViewController.swift */; };
+		0FCA98CE2B1771B90015F8CB /* GithubFollowersButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCA98CD2B1771B90015F8CB /* GithubFollowersButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0FA51DA42B169100009CC95A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FCA98C92B176BD80015F8CB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0FCA98CB2B176C030015F8CB /* FavoritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewController.swift; sourceTree = "<group>"; };
+		0FCA98CD2B1771B90015F8CB /* GithubFollowersButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubFollowersButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				0FA51DA42B169100009CC95A /* Info.plist */,
 				0FCA98C92B176BD80015F8CB /* SearchViewController.swift */,
 				0FCA98CB2B176C030015F8CB /* FavoritesListViewController.swift */,
+				0FCA98CD2B1771B90015F8CB /* GithubFollowersButton.swift */,
 			);
 			path = GitHubFollowers;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 				0FCA98CA2B176BD80015F8CB /* SearchViewController.swift in Sources */,
 				0FA51D972B1690FE009CC95A /* AppDelegate.swift in Sources */,
 				0FCA98CC2B176C030015F8CB /* FavoritesListViewController.swift in Sources */,
+				0FCA98CE2B1771B90015F8CB /* GithubFollowersButton.swift in Sources */,
 				0FA51D992B1690FE009CC95A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
