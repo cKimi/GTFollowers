@@ -23,7 +23,7 @@
 		0FE97AF72B18C82E00A48D07 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE97AF62B18C82E00A48D07 /* Follower.swift */; };
 		0FE97AF92B18C8CC00A48D07 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE97AF82B18C8CC00A48D07 /* User.swift */; };
 		0FE97AFC2B18CDA300A48D07 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE97AFB2B18CDA300A48D07 /* NetworkManager.swift */; };
-		0FE97AFF2B18D3F900A48D07 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE97AFE2B18D3F900A48D07 /* ErrorMessage.swift */; };
+		0FE97AFF2B18D3F900A48D07 /* GitHubError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE97AFE2B18D3F900A48D07 /* GitHubError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +45,7 @@
 		0FE97AF62B18C82E00A48D07 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		0FE97AF82B18C8CC00A48D07 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0FE97AFB2B18CDA300A48D07 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		0FE97AFE2B18D3F900A48D07 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		0FE97AFE2B18D3F900A48D07 /* GitHubError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +151,7 @@
 		0FE97AFD2B18D3E700A48D07 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				0FE97AFE2B18D3F900A48D07 /* ErrorMessage.swift */,
+				0FE97AFE2B18D3F900A48D07 /* GitHubError.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -233,7 +233,7 @@
 				0F2168552B17BDD7006CFEDD /* UIViewController+Ext.swift in Sources */,
 				0FCA98D02B17747D0015F8CB /* GithubTextField.swift in Sources */,
 				0F2168532B17B773006CFEDD /* GitHubAlertViewController.swift in Sources */,
-				0FE97AFF2B18D3F900A48D07 /* ErrorMessage.swift in Sources */,
+				0FE97AFF2B18D3F900A48D07 /* GitHubError.swift in Sources */,
 				0FCA98D22B17846E0015F8CB /* FollowerListViewController.swift in Sources */,
 				0FE97AF72B18C82E00A48D07 /* Follower.swift in Sources */,
 				0FCA98CC2B176C030015F8CB /* FavoritesListViewController.swift in Sources */,
