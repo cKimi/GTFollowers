@@ -12,6 +12,7 @@
 		0F2168532B17B773006CFEDD /* GitHubAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2168522B17B773006CFEDD /* GitHubAlertViewController.swift */; };
 		0F2168552B17BDD7006CFEDD /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2168542B17BDD7006CFEDD /* UIViewController+Ext.swift */; };
 		0F2B0B822B1A80FA00C3E778 /* GitHubItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2B0B812B1A80FA00C3E778 /* GitHubItemInfoView.swift */; };
+		0F2B0B842B1A853A00C3E778 /* GitHubItemInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2B0B832B1A853A00C3E778 /* GitHubItemInfoViewController.swift */; };
 		0F3C8EF62B1A1B55009F3056 /* GitHubEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C8EF52B1A1B55009F3056 /* GitHubEmptyStateView.swift */; };
 		0F3C8EF82B1A440C009F3056 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C8EF72B1A440C009F3056 /* UserInfoViewController.swift */; };
 		0F3C8EFA2B1A4C2B009F3056 /* GitHubInfoHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C8EF92B1A4C2B009F3056 /* GitHubInfoHeaderViewController.swift */; };
@@ -41,6 +42,7 @@
 		0F2168522B17B773006CFEDD /* GitHubAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAlertViewController.swift; sourceTree = "<group>"; };
 		0F2168542B17BDD7006CFEDD /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		0F2B0B812B1A80FA00C3E778 /* GitHubItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubItemInfoView.swift; sourceTree = "<group>"; };
+		0F2B0B832B1A853A00C3E778 /* GitHubItemInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubItemInfoViewController.swift; sourceTree = "<group>"; };
 		0F3C8EF52B1A1B55009F3056 /* GitHubEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubEmptyStateView.swift; sourceTree = "<group>"; };
 		0F3C8EF72B1A440C009F3056 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		0F3C8EF92B1A4C2B009F3056 /* GitHubInfoHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubInfoHeaderViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				0F2168522B17B773006CFEDD /* GitHubAlertViewController.swift */,
 				0F3C8EF92B1A4C2B009F3056 /* GitHubInfoHeaderViewController.swift */,
+				0F2B0B832B1A853A00C3E778 /* GitHubItemInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				0F3C8EFE2B1A5F7D009F3056 /* Constants.swift in Sources */,
 				0FCA98D02B17747D0015F8CB /* GithubTextField.swift in Sources */,
 				0F3C8EFA2B1A4C2B009F3056 /* GitHubInfoHeaderViewController.swift in Sources */,
+				0F2B0B842B1A853A00C3E778 /* GitHubItemInfoViewController.swift in Sources */,
 				0F2168532B17B773006CFEDD /* GitHubAlertViewController.swift in Sources */,
 				0FE97B022B18FB9F00A48D07 /* FollowerCell.swift in Sources */,
 				0FE97AFF2B18D3F900A48D07 /* GitHubError.swift in Sources */,
