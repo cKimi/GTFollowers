@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol ItemInfoViewControllerDelegate: AnyObject {
+    func didTapGitHubProfile(for user: User)
+    func didTapGetFollowers(for user: User)
+}
+
 class GitHubItemInfoViewController: UIViewController {
 
     let stackView = UIStackView()
@@ -15,7 +20,7 @@ class GitHubItemInfoViewController: UIViewController {
     let actionButton = GithubButton()
     
     var user: User!
-    weak var delegate: UserInfoViewControllerDelegate!
+    weak var delegate: ItemInfoViewControllerDelegate!
     
     init(user: User) {
         super.init(nibName: nil, bundle: nil)
