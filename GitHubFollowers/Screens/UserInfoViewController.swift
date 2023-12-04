@@ -51,15 +51,8 @@ class UserInfoViewController: GitHubDataLoadingViewController {
     }
     
     func configureUIElements(with user: User) {
-        
-        let repoItemViewController = GitHubRepoItemViewController(user: user)
-        repoItemViewController.delegate = self
-        
-        let followerItemViewController = GitHubFollowerItemViewController(user: user)
-        followerItemViewController.delegate = self
-        
-        self.add(childVC: repoItemViewController, to: self.itemViewOne)
-        self.add(childVC: followerItemViewController, to: self.itemViewTwo)
+        self.add(childVC: GitHubRepoItemViewController(user: user, delegate: self), to: self.itemViewOne)
+        self.add(childVC: GitHubFollowerItemViewController(user: user, delegate: self), to: self.itemViewTwo)
         self.add(childVC: GitHubInfoHeaderViewController(user: user), to: self.headerView)
         self.dateLabel.text = "GitHub since \(user.createdAt.convertToMonthYearFormat())"
     }
@@ -107,7 +100,7 @@ class UserInfoViewController: GitHubDataLoadingViewController {
     
 }
 
-extension UserInfoViewController: ItemInfoViewControllerDelegate {
+extension UserInfoViewController: GitHubRepoItemViewControllerDelegate {
     func didTapGitHubProfile(for user: User) {
         guard let url = URL(string: user.htmlUrl) else {
             presentGithubAlertOnMainThread(title: "Invalid URL", message: "The url attached to this user is invalid.", buttonTitle: "Ok")
@@ -115,7 +108,9 @@ extension UserInfoViewController: ItemInfoViewControllerDelegate {
         }
         presentSafariViewController(with: url)
     }
-    
+}
+
+extension UserInfoViewController: GitHubFollowerItemViewControllerDelegate {
     func didTapGetFollowers(for user: User) {
         guard user.followers != 0 else {
             presentGithubAlertOnMainThread(title: "No followers", message: "This user has no followers. What a shame 😞.", buttonTitle: "So sad")
