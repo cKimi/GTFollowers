@@ -10,13 +10,18 @@ import SafariServices
 
 extension UIViewController {
     
-    func presentGithubAlertOnMainThread(title: String, message: String, buttonTitle: String) {
-        DispatchQueue.main.async {
-            let alertVC = GitHubAlertViewController(title: title, message: message, buttonTitle: buttonTitle)
-            alertVC.modalPresentationStyle = .overFullScreen
-            alertVC.modalTransitionStyle = .crossDissolve
-            self.present(alertVC, animated: true)
-        }
+    func presentGitHubAlert(title: String, message: String, buttonTitle: String) {
+        let alertVC = GitHubAlertViewController(title: title, message: message, buttonTitle: buttonTitle)
+        alertVC.modalPresentationStyle = .overFullScreen
+        alertVC.modalTransitionStyle = .crossDissolve
+        present(alertVC, animated: true)
+    }
+    
+    func presentDefaultError() {
+        let alertVC = GitHubAlertViewController(title: "Something went wrong", message: "We were unable to complete your task at this time. Please try again", buttonTitle: "Ok")
+        alertVC.modalPresentationStyle = .overFullScreen
+        alertVC.modalTransitionStyle = .crossDissolve
+        present(alertVC, animated: true)
     }
     
     func presentSafariViewController(with url: URL) {

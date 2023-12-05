@@ -75,19 +75,20 @@ class FollowerListViewController: GitHubDataLoadingViewController {
         showLoadingView()
         isLoadingMoreFollowers = true
         
-        NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result in
-            guard let self = self else { return }
-            self.dismissLoadingView()
-            
-            switch result {
-            case .success(let followers):
-                self.updateUI(with: followers)
+        Task {
+            do {
+                let followers = try await NetworkManager.shared.getFollowers(for: username, page: page)
+                updateUI(with: followers)
+                dismissLoadingView()
+            } catch { 
+                if let gfError = error as? GitHubError {
+                    presentGitHubAlert(title: "Bad Stuff Happened", message: gfError.rawValue, buttonTitle: "Ok")
+                } else {
+                    presentDefaultError()
+                }
                 
-            case .failure(let error):
-                self.presentGithubAlertOnMainThread(title: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "Ok")
+                dismissLoadingView()
             }
-            
-            self.isLoadingMoreFollowers = false
         }
     }
     
@@ -129,7 +130,7 @@ class FollowerListViewController: GitHubDataLoadingViewController {
                 self.addUserToFavorites(user: user)
                 
             case .failure(let error):
-                self.presentGithubAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+                self.presentGitHubAlert(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
             }
         }
     }
@@ -141,11 +142,11 @@ class FollowerListViewController: GitHubDataLoadingViewController {
             guard let self = self else { return }
             
             guard let error = error else {
-                self.presentGithubAlertOnMainThread(title: "Success!", message: "You have successfully favorited this user 🎉", buttonTitle: "Hooray!")
+                self.presentGitHubAlert(title: "Success!", message: "You have successfully favorited this user 🎉", buttonTitle: "Hooray!")
                 return
             }
             
-            self.presentGithubAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+            self.presentGitHubAlert(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
         }
     }
 }

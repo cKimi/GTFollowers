@@ -49,7 +49,7 @@ class FavoritesListViewController: GitHubDataLoadingViewController {
                 self.updateUI(with: favorites)
                 
             case .failure(let error):
-                self.presentGithubAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+                self.presentGitHubAlert(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
             }
         }
     }
@@ -100,7 +100,7 @@ extension FavoritesListViewController: UITableViewDelegate, UITableViewDataSourc
                 return
             }
             
-            self.presentGithubAlertOnMainThread(title: "Unable to remove", message: error.rawValue, buttonTitle: "Ok")
+            self.presentGitHubAlert(title: "Unable to remove", message: error.rawValue, buttonTitle: "Ok")
         }
     }
     

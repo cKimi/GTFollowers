@@ -61,7 +61,7 @@ class UserInfoViewController: GitHubDataLoadingViewController {
                 DispatchQueue.main.async { self.configureUIElements(with: user) }
                 
             case .failure(let error):
-                self.presentGithubAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+                self.presentGitHubAlert(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
             }
         }
     }
@@ -119,7 +119,7 @@ class UserInfoViewController: GitHubDataLoadingViewController {
 extension UserInfoViewController: GitHubRepoItemViewControllerDelegate {
     func didTapGitHubProfile(for user: User) {
         guard let url = URL(string: user.htmlUrl) else {
-            presentGithubAlertOnMainThread(title: "Invalid URL", message: "The url attached to this user is invalid.", buttonTitle: "Ok")
+            presentGitHubAlert(title: "Invalid URL", message: "The url attached to this user is invalid.", buttonTitle: "Ok")
             return
         }
         presentSafariViewController(with: url)
@@ -129,7 +129,7 @@ extension UserInfoViewController: GitHubRepoItemViewControllerDelegate {
 extension UserInfoViewController: GitHubFollowerItemViewControllerDelegate {
     func didTapGetFollowers(for user: User) {
         guard user.followers != 0 else {
-            presentGithubAlertOnMainThread(title: "No followers", message: "This user has no followers. What a shame 😞.", buttonTitle: "So sad")
+            presentGitHubAlert(title: "No followers", message: "This user has no followers. What a shame 😞.", buttonTitle: "So sad")
             return
         }
         delegate.didRequestFollowers(for: user.login)
