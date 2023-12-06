@@ -48,6 +48,20 @@ class FollowerListViewController: GitHubDataLoadingViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    override func updateContentUnavailableConfiguration(using state: UIContentUnavailableConfigurationState) {
+        if followers.isEmpty && !isLoadingMoreFollowers {
+            var config = UIContentUnavailableConfiguration.empty()
+            config.image = .init(systemName: "person.slash")
+            config.text = "No Followers"
+            config.secondaryText = "This user has no followers. Go follow them!"
+            contentUnavailableConfiguration = config
+        } else if isSearching && filteredFollowers.isEmpty {
+            contentUnavailableConfiguration = UIContentUnavailableConfiguration.search()
+        } else {
+            contentUnavailableConfiguration = nil
+        }
+    }
+    
     func configureViewController() {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -95,14 +109,8 @@ class FollowerListViewController: GitHubDataLoadingViewController {
     func updateUI(with followers: [Follower]) {
         if followers.count < 100 { self.hasMoreFollowers = false }
         self.followers.append(contentsOf: followers)
-        
-        if self.followers.isEmpty {
-            let message = "This user doesn't have any followers. Go follow them 😃."
-            DispatchQueue.main.async { self.showEmptyStateView(with: message, in: self.view) }
-            return
-        }
-        
         self.updateData(on: followers)
+        setNeedsUpdateContentUnavailableConfiguration()
     }
     
     func configureDataSource() {
@@ -188,6 +196,7 @@ extension FollowerListViewController: UISearchResultsUpdating {
             filteredFollowers.removeAll()
             updateData(on: followers)
             isSearching = false
+            setNeedsUpdateContentUnavailableConfiguration()
             return
         }
         
@@ -195,6 +204,7 @@ extension FollowerListViewController: UISearchResultsUpdating {
         filteredFollowers = followers.filter { $0.login.lowercased().contains(filter.lowercased()) }
         
         updateData(on: filteredFollowers)
+        setNeedsUpdateContentUnavailableConfiguration()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
